@@ -136,6 +136,11 @@ namespace GitUI
             return StartDeleteBranchDialog(owner, new[] { branch });
         }
 
+        public void CopyBranchPathToClipBoard(string path)
+        {
+            Clipboard.SetText(path);
+        }
+
         public bool StartDeleteBranchDialog(IWin32Window owner, IEnumerable<string> branches)
         {
             return DoActionOnRepo(owner, true, false, null, null, () =>
