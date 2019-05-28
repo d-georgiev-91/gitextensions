@@ -110,6 +110,11 @@ namespace GitUI.BranchTreePanel
                     TreeViewNode.TreeView?.Focus();
                 }));
             }
+
+            public void CopyToClipboard()
+            {
+                UICommands.CopyBranchPathToClipBoard(FullPath);
+            }
         }
 
         private sealed class LocalBranchNode : BaseBranchNode, IGitRefActions, ICanRename, ICanDelete
