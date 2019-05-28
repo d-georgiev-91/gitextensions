@@ -61,6 +61,7 @@ namespace GitUI.BranchTreePanel
             this.mnubtnCollapseAll = new System.Windows.Forms.ToolStripMenuItem();
             this.mnubtnExpandAll = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBranch = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnubtnCopyLocalBranchPath = new System.Windows.Forms.ToolStripMenuItem();
             this.mnubtnFilterLocalBranchInRevisionGrid = new System.Windows.Forms.ToolStripMenuItem();
             this.mnubtnFilterRemoteBranchInRevisionGrid = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTags = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -74,6 +75,7 @@ namespace GitUI.BranchTreePanel
             this.mnubtnFetchCreateBranch = new System.Windows.Forms.ToolStripMenuItem();
             this.mnubtnFetchOneBranch = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnubtnCopyRemoteBranchLocalPath = new System.Windows.Forms.ToolStripMenuItem();
             this.mnubtnFetchAllBranchesFromARemote = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTag = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuBranchPath = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -172,12 +174,22 @@ namespace GitUI.BranchTreePanel
             // 
             // menuBranch
             // 
+            
             this.menuBranch.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnubtnCopyLocalBranchPath,
             this.mnubtnFilterLocalBranchInRevisionGrid});
             this.menuBranch.Name = "contextmenuBranch";
             this.menuBranch.Size = new System.Drawing.Size(192, 76);
             this.menuBranch.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenu_Opening);
 
+            // 
+            // mnubtnCopyLocalBranchPath
+            // 
+            this.mnubtnCopyLocalBranchPath.Image = global::GitUI.Properties.Images.CopyToClipboard;
+            this.mnubtnCopyLocalBranchPath.Name = "mnubtnCopyLocalBranchPath";
+            this.mnubtnCopyLocalBranchPath.Size = new System.Drawing.Size(226, 26);
+            this.mnubtnCopyLocalBranchPath.Text = "Copy branch path";
+            this.mnubtnCopyLocalBranchPath.ToolTipText = "Copies the full branch path";
             // 
             // mnubtnFilterLocalBranchInRevisionGrid
             // 
@@ -232,6 +244,7 @@ namespace GitUI.BranchTreePanel
             this.mnubtnFetchCreateBranch,
             this.mnubtnFetchOneBranch,
             this.toolStripSeparator1,
+            this.mnubtnCopyRemoteBranchLocalPath,
             this.mnubtnFilterRemoteBranchInRevisionGrid });
             this.menuRemote.Name = "contextmenuRemote";
             this.menuRemote.Size = new System.Drawing.Size(194, 280);
@@ -281,6 +294,14 @@ namespace GitUI.BranchTreePanel
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(190, 6);
 
+            // 
+            // mnubtnCopyRemoteBranchLocalPath
+            // 
+            this.mnubtnCopyRemoteBranchLocalPath.Image = global::GitUI.Properties.Images.CopyToClipboard;
+            this.mnubtnCopyRemoteBranchLocalPath.Name = "mnubtnCopyRemoteBranchLocalPath";
+            this.mnubtnCopyRemoteBranchLocalPath.Size = new System.Drawing.Size(229, 26);
+            this.mnubtnCopyRemoteBranchLocalPath.Text = "Copy branch path";
+            this.mnubtnCopyRemoteBranchLocalPath.ToolTipText = "Copies the full branch path";
             // 
             // mnubtnFetchAllBranchesFromARemote
             // 
@@ -486,7 +507,7 @@ namespace GitUI.BranchTreePanel
             this.tsmiShowBranches.Size = new System.Drawing.Size(154, 22);
             this.tsmiShowBranches.Text = "&Branches";
             this.tsmiShowBranches.Click += new System.EventHandler(this.tsmiShowBranches_Click);
-            // 
+            //
             // tsmiShowTags
             // 
             this.tsmiShowTags.CheckOnClick = true;
@@ -531,7 +552,7 @@ namespace GitUI.BranchTreePanel
             this.menuSubmodule.Name = "contextmenuSubmodule";
             this.menuSubmodule.Size = new System.Drawing.Size(177, 26);
             this.menuSubmodule.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenu_Opening);
-            // 
+            //
             // mnubtnOpenSubmodule
             // 
             this.mnubtnOpenSubmodule.Image = global::GitUI.Properties.Images.FolderOpen;
@@ -586,7 +607,7 @@ namespace GitUI.BranchTreePanel
             this.mnubtnSynchronizeSubmodules.Size = new System.Drawing.Size(195, 22);
             this.mnubtnSynchronizeSubmodules.Text = "Synchronize";
             this.mnubtnSynchronizeSubmodules.ToolTipText = "Synchronize selected submodule recursively";
-            // 
+            //
             // RepoObjectsTree
             // 
             this.Controls.Add(this.repoTreePanel);
@@ -665,5 +686,7 @@ namespace GitUI.BranchTreePanel
         private ToolStripMenuItem mnubtnOpenSubmodule;
         private ToolStripMenuItem mnubtnMoveUp;
         private ToolStripMenuItem mnubtnMoveDown;
+        private ToolStripMenuItem mnubtnCopyLocalBranchPath;
+        private ToolStripMenuItem mnubtnCopyRemoteBranchLocalPath;
     }
 }
