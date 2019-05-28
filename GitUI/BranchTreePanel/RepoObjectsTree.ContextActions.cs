@@ -205,6 +205,12 @@ namespace GitUI.BranchTreePanel
             RegisterClick<BranchPathNode>(mnubtnDeleteAllBranches, branchPath => branchPath.DeleteAll());
             Node.RegisterContextMenu(typeof(BranchPathNode), menuBranchPath);
 
+            RegisterClick<LocalBranchNode>(mnubtnCopyLocalBranchPath, branchPath => branchPath.CopyToClipboard());
+            Node.RegisterContextMenu(typeof(BranchPathNode), menuBranchPath);
+
+            RegisterClick<RemoteBranchNode>(mnubtnCopyRemoteBranchLocalPath, branchPath => branchPath.CopyToClipboard());
+            Node.RegisterContextMenu(typeof(BranchPathNode), menuBranchPath);
+
             RegisterClick<RemoteBranchNode>(mnubtnFetchOneBranch, remoteBranch => remoteBranch.Fetch());
             RegisterClick<RemoteBranchNode>(mnubtnPullFromRemoteBranch, remoteBranch => remoteBranch.FetchAndMerge());
             RegisterClick<RemoteBranchNode>(mnubtnFilterRemoteBranchInRevisionGrid, FilterInRevisionGrid);
