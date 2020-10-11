@@ -20,7 +20,7 @@ namespace NetSpell.SpellChecker.Dictionary
     /// <summary>
     /// The WordDictionary class contains all the logic for managing the word list.
     /// </summary>
-    [ToolboxBitmap(typeof(WordDictionary), "Dictionary.bmp")]
+    // TODO Remove [ToolboxBitmap(typeof(WordDictionary), "Dictionary.bmp")]
     public class WordDictionary : Component
     {
         private string _dictionaryFile = Thread.CurrentThread.CurrentCulture.Name + ".dic";

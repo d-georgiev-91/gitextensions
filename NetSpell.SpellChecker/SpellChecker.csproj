@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <AssemblyName>NetSpell.SpellChecker</AssemblyName>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
+    <Compile Update="Dictionary\WordDictionary.cs" />
+    <Compile Update="Spelling.cs" />
   </ItemGroup>
 
 </Project>
